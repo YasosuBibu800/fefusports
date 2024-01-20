@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FS</title>
+</head>
+
+<body>
+    
+    <div id="header">
+        <h1>FEFUSPORT</h1>
+    </div>
+    
+    
+    <div id="form-container">
+        <div class="toggle-button">
+            <button class="login" onclick="toggleForm('login-form')">Login</button>
+            <button class="register active" onclick="toggleForm('registration-form')">Register</button>
+        </div>
+         <form id="login-form" class="form">
+            <!-- Ваша форма для входа здесь -->
+            <label for="login-username">Username: <color: rgb(0, 0, 0)></color:></label>
+            <input type="text" id="login-username" name="login-username">
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="login-password">
+            <div class="form-buttons">
+                <button class="login save" onclick="login()">Login</button>
+            </div>
+        </form>
+        
+        <form id="registration-form" class="form">
+            <!-- Ваша форма для регистрации здесь -->
+            <label for="email">Email: </label>
+            <input type="text" id="email" name="email">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password">
+            <div class="form-buttons">
+                <button class="save" onclick="saveData()">Save</button>
+            </div>
+            
+        </form>
+    </div>
+
+    <script>
+        function toggleForm(formId, button) {
+            var forms = document.querySelectorAll('.form');
+            forms.forEach(function (form) {
+                form.style.display = 'none';
+            });
+    
+            document.getElementById(formId).style.display = 'block';
+    
+            // Очищаем сообщение об ошибке при смене формы
+            document.getElementById('error-message').style.display = 'none';
+    
+            // Снимаем выделение со всех кнопок
+            var buttons = document.querySelectorAll('.toggle-button button');
+            buttons.forEach(function (btn) {
+                btn.classList.remove('active');
+            });
+    
+            // Выделяем выбранную кнопку
+            button.classList.add('active');
+        }
+    
+        function validateRegistrationForm() {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+
+            // Получаем элемент для отображения сообщения об ошибке
+            var errorMessageElement = document.getElementById('error-message');
+
+            if (password !== confirmPassword) {
+                errorMessageElement.innerHTML = 'Passwords do not match'; // Устанавливаем текст сообщения
+                errorMessageElement.style.display = 'block'; // Показываем сообщение об ошибке
+                return false;
+            } else {
+                errorMessageElement.style.display = 'none'; // Скрываем сообщение об ошибке, если пароли совпадают
+            }
+        }
+
+        function toggleForm(formType) {
+            if (formType === 'registration-form') {
+                document.getElementById('registration-form').style.display = 'block';
+                document.getElementById('login-form').style.display = 'none';
+                document.querySelector('.toggle-button .register').classList.add('active');
+                document.querySelector('.toggle-button .login').classList.remove('active');
+            } else {
+                document.getElementById('registration-form').style.display = 'none';
+                document.getElementById('login-form').style.display = 'block';
+                document.querySelector('.toggle-button .register').classList.remove('active');
+                document.querySelector('.toggle-button .login').classList.add('active');
+            }
+        }
+
+        function saveData() {
+            alert('Registration logic goes here');
+        }
+
+        function login() {
+            alert('Login logic goes here');
+        }
+    </script>
+    
+</body>
+</html>
