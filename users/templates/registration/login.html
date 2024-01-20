@@ -1,0 +1,31 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block reference %}
+<link rel="stylesheet" href="{% static 'registration/css/login_register.css'%}">
+<script type="text/javascript" src="{% static 'registration/js/scripts.js'%}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="login form">
+        <header>Login</header>
+        <form method="post">
+        {% csrf_token %}
+            <input type="text" name="username" placeholder="Enter your username">
+            <div>
+                <input type="password" id="password-input" name="password" placeholder="Enter your password">
+                <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
+            </div>
+            <a href="#">Forgot password?</a>
+            <button class="button">Login</button>
+        {{ form.errors }}
+        </form>
+        <div class="signup">
+            <span class="signup">Don't have an account?
+                <a href="{% url 'register' %}"><label for="check">Signup</label></a>
+            </span>
+        </div>
+    </div>
+</div>
+{% endblock %}
