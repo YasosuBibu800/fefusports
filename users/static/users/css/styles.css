@@ -41,6 +41,13 @@ p.link-read-post a {
 	text-decoration: none;
 }
 
+#references {
+	position: absolute;
+	right: 3%;
+	bottom: 10%;
+	vertical-align: bottom;
+}
+
 div.article-panel {
     background: #eee;
     padding: 5px 10px 5px 10px;
@@ -370,7 +377,7 @@ ul.lang-list li a:hover {color: #fdc073;}
 
 .form-label {
     display: inline-block;
-    min-width: 150px;
+    min-width: 175px;
     vertical-align: top;
 }
 

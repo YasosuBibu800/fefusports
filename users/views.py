@@ -12,6 +12,7 @@ from .forms import *
 from .models import *
 from .utils import *
 
+
 class UsersHome(DataMixin, ListView):
     model = Users
     template_name = 'users/index.html'

@@ -2,12 +2,14 @@ from django.db.models import Count
 
 from .models import *
 
-menu = [{'title': "О сайте", 'url_name': 'about'},
-        {'title': "Добавить анкету", 'url_name': 'add_page'},
+menu = [
+    {'title': "", 'url_name': 'about'},
+    {'title': "Добавить анкету", 'url_name': 'add_page'},
 ]
 
+
 class DataMixin:
-    paginate_by = 2
+    paginate_by = 4
 
     def get_user_context(self, **kwargs):
         context = kwargs

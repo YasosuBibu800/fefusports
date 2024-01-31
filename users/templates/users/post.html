@@ -2,10 +2,18 @@
 
 {% block content %}
 <h1>{{post.title}}</h1>
-
 {% if post.photo %}
 <p><img class="img-article-left" src="{{post.photo.url}}"></p>
 {% endif %}
-
 {{post.content|linebreaks}}
+<div id="references">
+    <p class="link-read-post">
+        {% if post.ref_tg %}
+        <a href="{{post.ref_tg}}" id="ref-tg">Telegram</a>
+        {% endif %}
+        {% if post.ref_vk %}
+        <a href="{{post.ref_vk}}">VK</a>
+        {% endif %}
+    </p>
+</div>
 {% endblock %}
