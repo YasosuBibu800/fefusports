@@ -39,6 +39,11 @@ p.link-read-post a {
 	background: #333671;
 	color: #fff;
 	text-decoration: none;
+	transition: 0.5s;
+}
+
+p.link-read-post a:hover {
+	background: #454875;
 }
 
 #references {
@@ -83,7 +88,7 @@ ul.list-articles li {
 .clear {clear: both;}
 
 .header {
-	background: #3F4137;
+	background: #3c6917;
 	height: 60px;
 }
 
@@ -92,7 +97,7 @@ ul.mainmenu {
 	margin: 0;
 	padding: 0;
 	height: 60px;
-	color: #fdc073;
+	color: #ce9652;
 	font-size: 20px;
 	overflow: hidden;
 }
@@ -104,11 +109,13 @@ ul.mainmenu li.logo {margin: 0;}
 ul.mainmenu li.last {float: right;}
 
 ul.mainmenu li a {
-	color: #fdc073;
+	color: #ce9652;
 	text-decoration: none;
+	padding: 5px;
+	transition: 0.5s;
 }
 ul.mainmenu li a:hover {
-	color: #FDA83D;
+	background-color: #695642;
 }
 
 .panelitems {
@@ -179,12 +186,17 @@ div.button {
 	margin: 30px 0 0 0;
 	color: #999;
 }
-.left-chapters ul li.selected {color: #0059b2; }
+.left-chapters ul li.selected {
+	color: #0059b2;
+}
 .left-chapters ul li a {
 	color: #444;
 	text-decoration: none;
+	transition: 0.5s;
 }
-.left-chapters ul li a:hover { color: #CC0000; }
+.left-chapters ul li a:hover {
+	color: #cb4040;
+}
 .left-chapters ul li.share {margin: 60px 0 0 0;}
 .left-chapters ul li.share p {margin: 30px 0 30px 0;}
 .left-chapters ul li.share a {
